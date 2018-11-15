@@ -85,16 +85,24 @@
                         </auth>
                     </from>
                     <to>
-                        <auth>
-                            <username>76957808</username>
-                            <password>Jj123456</password>
-                        </auth>
-                        <image>registry.hub.docker.com/76957808/spring-boot-multiple-datasource</image>
-                        <tags>
-                            <tag>${maven.build.timestamp}</tag>
-                            <tag>${version}</tag>
-                        </tags>
+                        <!--<auth>-->
+                            <!--<username>76957808</username>-->
+                            <!--<password>Jj123456</password>-->
+                        <!--</auth>-->
+                        <!--<image>registry.hub.docker.com/76957808/spring-boot-multiple-datasource</image>-->
+                        <image>76957808/spring-boot-multiple-datasource</image>
                     </to>
+                    <container>
+                        <useCurrentTimestamp>true</useCurrentTimestamp>
+                        <jvmFlags>
+                            <jvmFlag>-Xms128m</jvmFlag>
+                            <jvmFlag>-Xmx128m</jvmFlag>
+                            <jvmFlag>-Duser.timezone=GMT+08</jvmFlag>
+                            <jvmFlag>-Dfile.encoding=UTF-8</jvmFlag>
+                            <jvmFlag>-Djava.security.egd=file:/dev/./urandom</jvmFlag>
+                            <jvmFlag>-Djava.util.concurrent.ForkJoinPool.common.parallelism=2000</jvmFlag>
+                        </jvmFlags>
+                    </container>
                 </configuration>
                 <executions>
                     <execution>
